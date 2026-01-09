@@ -9,6 +9,10 @@ import chalk from 'chalk';
 import fs from 'fs'; 
 import './config.js';
 
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Bot Online!'));
+app.listen(process.env.PORT || 8080);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
 const { say } = cfonts;
